@@ -212,8 +212,8 @@ xref:testing.adoc#testing.requests[execute requests] using the same API, indepen
 transport.
 
 
-[[testing.graphqlservicetester]]
-=== `GraphQlService`
+[[testing.tester]]
+=== ``
 
 Many times it's enough to test GraphQL requests on the server side, without the use of a
 client to send requests over a transport protocol. To test directly against a
@@ -221,7 +221,7 @@ client to send requests over a transport protocol. To test directly against a
 
 [source,java,indent=0,subs="verbatim,quotes"]
 ----
-	GraphQlService service = ... ;
+	ExecutionGraphQlService service = ... ;
 	ExecutionGraphQlServiceTester tester = ExecutionGraphQlServiceTester.create(service);
 ----
 
@@ -233,7 +233,7 @@ transport.
 
 [source,java,indent=0,subs="verbatim,quotes"]
 ----
-	GraphQlService service = ... ;
+	ExecutionGraphQlService service = ... ;
 	ExecutionGraphQlServiceTester tester = ExecutionGraphQlServiceTester.builder(service)
 			.configureExecutionInput((executionInput, builder) -> builder.executionId(id).build())
 			.build();
@@ -406,7 +406,7 @@ of responses and then use `StepVerifier` from Project Reactor to inspect the str
 
 Subscriptions are supported only with xref:testing.adoc#testing.websocketgraphqltester[WebSocketGraphQlTester]
 , or with the server side
-xref:testing.adoc#testing.graphqlservicetester[`GraphQlService`] and xref:testing.adoc#testing.webgraphqltester[`WebGraphQlHandler`] extensions.
+xref:testing.adoc#testing.graphqlservicetester[`ExecutionGraphQlService`] and xref:testing.adoc#testing.webgraphqltester[`WebGraphQlHandler`] extensions.
 
 
 
