@@ -213,7 +213,7 @@ transport.
 
 
 [[testing.graphqlservicetester]]
-=== `GraphQlService`
+=== `ExecutionGraphQlService`
 
 Many times it's enough to test GraphQL requests on the server side, without the use of a
 client to send requests over a transport protocol. To test directly against a
